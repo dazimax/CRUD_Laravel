@@ -1,0 +1,46 @@
+version: '2'
+services:
+ web-cont:
+  build:
+    context: .
+    dockerfile: docker/web.dockerfile.5.6
+    
+  # a name for easier reference
+  image: ecommerce-image
+  container_name: ecommerce-web-cont
+  volumes:
+   - ./html/ecommerce/:/var/www/html
+  environment:
+   - SERVER_NAME=dev.ecommerce.com
+   - USER_ID=1000
+  networks:
+   default:
+    ipv4_address: 10.0.0.10
+
+#local docker working db
+ mysql-cont:
+  image: mysql:5.7
+  container_name: ecommerce-mysql-cont
+  network_mode: service:web-cont
+  environment:
+   - MYSQL_ROOT_PASSWORD=123
+   - MYSQL_DATABASE=ecommerce
+   - MYSQL_USER=ecommerce
+   - MYSQL_PASSWORD=ecommerce
+
+# do not use new network use already created one as below
+# remember to use the same network name on above
+# networks should be same indent of services:
+networks:
+  default:
+    external:
+      name: docker_core_webapp_network
+  
+#networks:
+# app_net:
+#  driver: bridge
+#  ipam:
+#   driver: default
+#   config:
+#    - subnet: 10.0.0.0/24
+#      gateway: 10.0.0.1

@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="dev.ecommerce.com" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="dev.ecommerce.com" session_id="PHPSTORM">
+    <method />
+  </configuration>
+</component>

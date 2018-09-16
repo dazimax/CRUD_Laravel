@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpProjectServersManager">
+    <servers>
+      <server host="dev.ecommerce.com" id="5e461453-58d7-4e37-884a-8dde571b0ac5" name="dev.ecommerce.com" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/html" remote-root="/var/www/html" />
+          <mapping local-root="$PROJECT_DIR$/html/ecommerce/app/Http" remote-root="/var/www/html/app/Http" />
+          <mapping local-root="$PROJECT_DIR$/html/ecommerce/app/Http/Controllers" remote-root="/var/www/html/app/Http/Controllers" />
+          <mapping local-root="$PROJECT_DIR$/html/ecommerce/public" remote-root="/var/www/html/public" />
+        </path_mappings>
+      </server>
+    </servers>
+  </component>
+</project>
